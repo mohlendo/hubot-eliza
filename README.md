@@ -8,8 +8,8 @@ Add **hubot-eliza** to your `package.json` file:
 
 ```json
 "dependencies": {
-  "hubot": ">= 2.5.1",
-  "hubot-scripts": ">= 2.4.2",
+  "hubot": "^2.11.4",
+  "hubot-scripts": "^2.5.16",
   "hubot-eliza": "*"
 }
 ```
