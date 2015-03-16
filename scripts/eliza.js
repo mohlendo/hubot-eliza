@@ -12,31 +12,33 @@
 // Author:
 //   Manuel Ohlendorf <m.ohlendorf@gmail.com>
 
-var ElizaBot = require('../src/elizabot');
+//var ElizaBot = require('../src/elizabot');
 
-var eliza;
+//var eliza;
 
 module.exports = function (robot) {
 
-    function startSession(msg) {
-        eliza = new ElizaBot();
-        msg.reply(eliza.getInitial());
-    }
-
-    function endSession(msg) {
-        if (eliza) {
-            msg.reply(eliza.getFinal());
-        } else {
-            msg.reply("Sorry, but there is no running ELIZA session.");
-        }
-    }
+    //function startSession(msg) {
+    //    eliza = new ElizaBot();
+    //    msg.reply(eliza.getInitial());
+    //}
+    //
+    //function endSession(msg) {
+    //    if (eliza) {
+    //        msg.reply(eliza.getFinal());
+    //    } else {
+    //        msg.reply("Sorry, but there is no running ELIZA session.");
+    //    }
+    //}
 
     robot.respond(/eliza$/i, function (msg) {
-        startSession(msg);
+        msg.send("ELIZA");
+        //startSession(msg);
     });
 
     robot.respond(/bye eliza$/i, function (msg) {
-        endSession(msg);
+        msg.send("ELIZA");
+        //endSession(msg);
     });
     robot.respond(/eliza help$/i, function (msg) {
        msg.send("ELIZA");
