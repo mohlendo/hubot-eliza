@@ -2,9 +2,7 @@
 //   Hubot script for the famous Robotic Rogerian Therapist (ELIZA)
 //
 // Dependencies:
-//   "node-eliza": "latest"
-//
-// Configuration:
+//   "hubot-eliza": "latest"
 //
 // Commands:
 //   hubot eliza - Begin session with the Robotic Rogerian Therapist
@@ -16,9 +14,9 @@
 
 var ElizaBot = require('../src/elizabot');
 
-module.exports = function (robot) {
+var eliza;
 
-    var eliza;
+module.exports = function (robot) {
 
     function startSession(msg) {
         eliza = new ElizaBot();
@@ -37,7 +35,10 @@ module.exports = function (robot) {
         startSession(msg);
     });
 
-    robot.respond(/by eliza$/i, function (msg) {
+    robot.respond(/bye eliza$/i, function (msg) {
         endSession(msg);
     });
-}
+    robot.respond(/eliza help$/i, function (msg) {
+       msg.send("ELIZA");
+    });
+};
