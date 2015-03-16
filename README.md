@@ -2,6 +2,33 @@
 
 A hubot extension for the [Robotic Rogerian Therapist, ELIZA](http://en.wikipedia.org/wiki/ELIZA).
 
+## Installation
+
+Add **hubot-eliza** to your `package.json` file:
+
+```json
+"dependencies": {
+  "hubot": ">= 2.5.1",
+  "hubot-scripts": ">= 2.4.2",
+  "hubot-eliza": "*"
+}
+```
+
+OR run `npm install --save hubot-eliza`
+
+Add **hubot-eliza** to your `external-scripts.json`:
+
+```json
+["hubot-eliza"]
+```
+
+Run `npm install`
+
+## Commands
+
+* `hubot eliza` - starts a new session with eliza. From now on, eliza takes all the input from hubot
+* `hubot bye eliza` - ends a session. You can now interact with hubot again.
+
 ## License
 
 This project is based on and adapted from code found [here](http://www.masswerk.at/elizabot/). This is its license (or something like it):
